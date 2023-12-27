@@ -19,47 +19,53 @@ public class getUserData extends HttpServlet {
         HttpSession session = req.getSession();
         String userEmail = (String) session.getAttribute("userEmail");
 
-        String fullName = "";
-        String address = "";
-        String password = "";
+        if (userEmail == null) {
+            resp.sendRedirect("login.jsp");
+        } else {
+            String fullName = "";
+            String address = "";
+            String password = "";
 
-        Connection connection = null;
+            Connection connection = null;
 
-        try {
-            connection = dbConnection.getConnection();
-
-            String query = "SELECT name, address, password FROM user WHERE email = ?";
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, userEmail);
-
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                // Retrieve user details from the result set
-                fullName = resultSet.getString("name");
-                address = resultSet.getString("address");
-                password = resultSet.getString("password");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println(e);
-        } finally {
             try {
-                if (connection != null) {
-                    dbConnection.closeConnection(connection);
+                connection = dbConnection.getConnection();
+
+                String query = "SELECT name, address, password FROM user WHERE email = ?";
+                PreparedStatement preparedStatement = connection.prepareStatement(query);
+                preparedStatement.setString(1, userEmail);
+
+                ResultSet resultSet = preparedStatement.executeQuery();
+                if (resultSet.next()) {
+                    // Retrieve user details from the result set
+                    fullName = resultSet.getString("name");
+                    address = resultSet.getString("address");
+                    password = resultSet.getString("password");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
+                System.out.println(e);
+            } finally {
+                try {
+                    if (connection != null) {
+                        dbConnection.closeConnection(connection);
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
+
+            // Set the retrieved details as request attributes
+            req.setAttribute("fullName", fullName);
+            req.setAttribute("address", address);
+            req.setAttribute("email", userEmail);
+
+            // Forward the request to the "accDetails.jsp" page
+            RequestDispatcher dispatcher = req.getRequestDispatcher("account.jsp");
+            dispatcher.forward(req, resp);
         }
 
-        // Set the retrieved details as request attributes
-        req.setAttribute("fullName", fullName);
-        req.setAttribute("address", address);
-        req.setAttribute("email", userEmail);
 
-        // Forward the request to the "accDetails.jsp" page
-        RequestDispatcher dispatcher = req.getRequestDispatcher("account.jsp");
-        dispatcher.forward(req, resp);
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

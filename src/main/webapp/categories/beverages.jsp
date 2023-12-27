@@ -168,6 +168,35 @@
                             </button>
                         </div>
                     </div>
+
+                    <div class="productCard flex flexCol">
+                        <div class="productImg flex">
+                            <div class="productIcons flex flexRow">
+                                <span class="discIndicator">
+                                    -20%
+                                </span>
+                                <span class="wishlistIndicator">
+                                    <i class="fa-regular fa-heart"></i>
+                                </span>
+                            </div>
+                            <img src="https://i.postimg.cc/brf9L1tT/placeholder.png">
+                        </div>
+                        <div class="productContent flex flexCol">
+                            <h1>
+                                <a href="">
+                                    Product Title
+                                </a>
+                            </h1>
+                            <span class="productPrice flex flexRow">
+                                <h2 class="price">Rs. 152.00</h2>
+                                <h2 class="discPrice">Rs. 190.00</h2>
+                            </span>
+                            <button class="addToCartBtn flex flexRow">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 
                 

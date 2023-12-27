@@ -66,7 +66,7 @@ function navbarHTML() {
     html += '<img id="proPic" title="Account Management" src="https://i.postimg.cc/rF84Pdw2/default-Avatar.png">';
     
     html += '<div id="userDropdown" class="userDropdown">';
-    html += '<a id="accountSettingsLink" href="account.jsp">Account Settings</a>';
+    html += '<a id="accountSettingsLink" href="/getUserData">Account Settings</a>';
     html += '<a id="ordersLink" href="orders.jsp">Orders</a>';
     html += '<a id="helpCenterLink" href="helpCenter.jsp">Help Center</a>';
     html += '<a id="registerLink" href="register.jsp">Register</a>';
