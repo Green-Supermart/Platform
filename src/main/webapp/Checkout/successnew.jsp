@@ -9,7 +9,7 @@
     <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
-        <link rel="stylesheet" href="/Website/style.css">
+        <link rel="stylesheet" href="../style.css">
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
     <body>
          <!-- NAVBAR START ============================================================-->
         <nav id="navbar"></nav>
-        <script src="/Website/navbar.js"></script>
+        <script src="../navbar.js"></script>
         <!--============================================================== NAVBAR END -->
         
         
@@ -38,7 +38,7 @@
                 
                 <div class="formContainer flex flexCol">
                     
-                    <div class="formLogo" onclick="window.location.href='/Website'">
+                    <div class="formLogo" onclick="window.location.href='/../'">
                         <img src="https://i.postimg.cc/G9nCKgLp/green-Logo.png">
                     </div>
                     
@@ -47,7 +47,7 @@
                         Order Placed Successfully 
                     </p>
                     
-                    <button type="button" onclick="window.location.href='/Website'">Continue Shopping</button>
+                    <button type="button" onclick="window.location.href='/../'">Continue Shopping</button>
                     
                 </div>
                 
@@ -60,7 +60,7 @@
         
          <!-- FOOTER START ============================================================-->
         <footer class="flex" id="footer"></footer>
-        <script src="/Website/footer.js"></script>
+        <script src="../footer.js"></script>
         <!--============================================================== FOOTER END -->
         
         

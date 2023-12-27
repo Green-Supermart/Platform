@@ -10,8 +10,8 @@
     <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
-        <link rel="stylesheet" href="/Website/style.css">
-        <link rel="stylesheet" href="/Website/cart.css">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../cart.css">
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,13 +24,13 @@
         
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style" type="text/css" crossorigin>
         
-        <script src="/Website/script.js" defer></script>
-        <script src="/Website/cart.js" defer></script>
+        <script src="../script.js" defer></script>
+        <script src="../cart.js" defer></script>
     </head>
     <body>
          <!-- NAVBAR START ============================================================-->
         <nav id="navbar"></nav>
-        <script src="/Website/navbar.js"></script>
+        <script src="../navbar.js"></script>
         <!--============================================================== NAVBAR END -->
         
         
@@ -170,7 +170,7 @@
                     
          <!-- FOOTER START ============================================================-->
         <footer class="flex" id="footer"></footer>
-        <script src="/Website/footer.js"></script>
+        <script src="../footer.js"></script>
         <!--============================================================== FOOTER END -->
         
         
