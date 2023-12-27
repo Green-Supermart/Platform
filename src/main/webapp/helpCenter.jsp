@@ -10,8 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
-        <link rel="stylesheet" href="/Website/style.css">
-        <link rel="stylesheet" href="/Website/cart.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="cart.css">
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,22 +22,22 @@
         
         <link rel="icon" href="https://i.postimg.cc/MKJm2kGp/favicon.png">
         
-        <link rel="preload" href="/Website/style.css" as="style" type="text/css">
-        <link rel="preload" href="/Website/cart.css" as="style" type="text/css">
+        <link rel="preload" href="style.css" as="style" type="text/css">
+        <link rel="preload" href="cart.css" as="style" type="text/css">
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style" type="text/css" crossorigin>
         <link rel="preload" href="https://i.postimg.cc/MKJm2kGp/favicon.png" as="image" type="image/png">
         <link rel="preload" href="https://i.postimg.cc/G9nCKgLp/green-Logo.png" as="image" type="image/png">
         
-        <script src="/Website/script.js" defer></script>
-        <script src="/Website/cart.js" defer></script>
-        <script src="/Website/helpForm.js" defer></script>
+        <script src="script.js" defer></script>
+        <script src="cart.js" defer></script>
+        <script src="helpForm.js" defer></script>
     </head>
     
     <body>
         
         <!-- NAVBAR START ============================================================-->
         <nav id="navbar"></nav>
-        <script src="/Website/navbar.js"></script>
+        <script src="navbar.js"></script>
         <!--============================================================== NAVBAR END -->
         
         
@@ -53,7 +53,7 @@
             <div class="container">
                 
                 <div class="helpCardsContainer flex flexCol">
-                    <a href="/Website/helpCenter/article1.jsp" class="helpLink flex flexRow" style="text-decoration: none;">
+                    <a href="helpCenter/article1.jsp" class="helpLink flex flexRow" style="text-decoration: none;">
                         <div class="linkContent flex">
                             <div class="linkText flex flexCol">
                                 <h1>Related Topic</h1>
@@ -66,7 +66,7 @@
                         </div>
                     </a>
                     
-                    <a href="/Website/helpCenter/article2.jsp" class="helpLink flex flexRow" style="text-decoration: none;">
+                    <a href="helpCenter/article2.jsp" class="helpLink flex flexRow" style="text-decoration: none;">
                         <div class="linkContent flex">
                             <div class="linkText flex flexCol">
                                 <h1>Related Topic</h1>
@@ -79,7 +79,7 @@
                         </div>
                     </a>
                     
-                    <a href="/Website/helpCenter/article3.jsp" class="helpLink flex flexRow" style="text-decoration: none;">
+                    <a href="helpCenter/article3.jsp" class="helpLink flex flexRow" style="text-decoration: none;">
                         <div class="linkContent flex">
                             <div class="linkText flex flexCol">
                                 <h1>Related Topic</h1>
@@ -92,7 +92,7 @@
                         </div>
                     </a>
                     
-                    <a href="/Website/helpCenter/article4.jsp" class="helpLink flex flexRow" style="text-decoration: none;">
+                    <a href="helpCenter/article4.jsp" class="helpLink flex flexRow" style="text-decoration: none;">
                         <div class="linkContent flex">
                             <div class="linkText flex flexCol">
                                 <h1>Related Topic</h1>
@@ -105,7 +105,7 @@
                         </div>
                     </a>
                     
-                    <a href="/Website/helpCenter/article5.jsp" class="helpLink flex flexRow" style="text-decoration: none;">
+                    <a href="helpCenter/article5.jsp" class="helpLink flex flexRow" style="text-decoration: none;">
                         <div class="linkContent flex">
                             <div class="linkText flex flexCol">
                                 <h1>Related Topic</h1>
@@ -155,7 +155,7 @@
         
         <!-- FOOTER START ============================================================-->
         <footer class="flex" id="footer"></footer>
-        <script src="/Website/footer.js"></script>
+        <script src="footer.js"></script>
         <!--============================================================== FOOTER END -->
         
         

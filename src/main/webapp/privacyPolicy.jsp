@@ -10,8 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
-        <link rel="stylesheet" href="/Website/style.css">
-        <link rel="stylesheet" href="/Website/cart.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="cart.css">
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,21 +22,21 @@
         
         <link rel="icon" href="https://i.postimg.cc/MKJm2kGp/favicon.png">
         
-        <link rel="preload" href="/Website/style.css" as="style" type="text/css">
-        <link rel="preload" href="/Website/cart.css" as="style" type="text/css">
+        <link rel="preload" href="style.css" as="style" type="text/css">
+        <link rel="preload" href="cart.css" as="style" type="text/css">
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style" type="text/css" crossorigin>
         <link rel="preload" href="https://i.postimg.cc/MKJm2kGp/favicon.png" as="image" type="image/png">
         <link rel="preload" href="https://i.postimg.cc/G9nCKgLp/green-Logo.png" as="image" type="image/png">
         
-        <script src="/Website/script.js" defer></script>
-        <script src="/Website/cart.js" defer></script>
+        <script src="script.js" defer></script>
+        <script src="cart.js" defer></script>
     </head>
     
     <body>
         
         <!-- NAVBAR START ============================================================-->
         <nav id="navbar"></nav>
-        <script src="/Website/navbar.js"></script>
+        <script src="navbar.js"></script>
         <!--============================================================== NAVBAR END -->
         
         
@@ -54,7 +54,7 @@
                 <section class="flex flexCol">
                     <h1 class="sectionHeading">Introduction</h1>
                     
-                    <p>This Privacy Policy outlines how we collects, uses, and shares your personal information when you visit our website or use our services. By using our website or services, you agree to the terms of this Privacy Policy.</p>
+                    <p>This Privacy Policy outlines how we collects, uses, and shares your personal information when you visit ouror use our services. By using ouror services, you agree to the terms of this Privacy Policy.</p>
                 </section>
                 
                 <section class="flex flexCol">
@@ -78,7 +78,7 @@
                         <li>Provide you with our products and services</li>
                         <li>Process your orders and payments</li>
                         <li>Send you marketing communications</li>
-                        <li>Improve our website and services</li>
+                        <li>Improve ourand services</li>
                         <li>Protect against fraud and other illegal activity</li>
                     </ul>
                 </section>
@@ -110,7 +110,7 @@
                 <section class="flex flexCol">
                     <h1 class="sectionHeading">Changes to Our Privacy Policy</h1>
                     
-                    <p>We may update this Privacy Policy from time to time. If we make any material changes, we will notify you by email or by posting a notice on our website.</p>
+                    <p>We may update this Privacy Policy from time to time. If we make any material changes, we will notify you by email or by posting a notice on our</p>
                 </section>
                 
                 <section class="flex flexCol">
@@ -126,7 +126,7 @@
         
         <!-- FOOTER START ============================================================-->
         <footer class="flex" id="footer"></footer>
-        <script src="/Website/footer.js"></script>
+        <script src="footer.js"></script>
         <!--============================================================== FOOTER END -->
         
         

@@ -27,20 +27,20 @@ function footerHTML() {
     html += '<div class="footerContent flex flexRow">';
     html += '<div class="footerLinks flex flexCol">';
     html += '<h1>Support</h1>';
-    html += '<a href="/Website/helpCenter.jsp">Help Center</a>';
-    html += '<a href="/Website/returnPolicy.jsp">Return Policy</a>';
+    html += '<a href="helpCenter.jsp">Help Center</a>';
+    html += '<a href="returnPolicy.jsp">Return Policy</a>';
     html += '</div>';
     
     html += '<div class="footerLinks flex flexCol">';
     html += '<h1>Legal</h1>';
-    html += '<a href="/Website/privacyPolicy.jsp">Privacy Policy</a>';
-    html += '<a href="/Website/termsConditions.jsp">Terms & Conditions</a>';
+    html += '<a href="privacyPolicy.jsp">Privacy Policy</a>';
+    html += '<a href="termsConditions.jsp">Terms & Conditions</a>';
     html += '</div>';
     
     html += '<div class="footerLinks flex flexCol">';
     html += '<h1>Socials</h1>';
     html += '<span class="externLinks">';
-    html += '<a href="https://github.com/Green-Supermart/Website" target="_blank">GitHub</a> <i class="fa-solid fa-square-arrow-up-right"></i>';
+    html += '<a href="https://github.com/Green-Supermart" target="_blank">GitHub</a> <i class="fa-solid fa-square-arrow-up-right"></i>';
     html += '</span>';
     html += '<span class="externLinks">';
     html += '<a href="https://www.instagram.com" target="_blank">Instagram</a> <i class="fa-solid fa-square-arrow-up-right"></i>';

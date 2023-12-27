@@ -10,8 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
-        <link rel="stylesheet" href="/Website/style.css">
-        <link rel="stylesheet" href="/Website/cart.css">
+        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/cart.css">
         <style>
             .container404{
                 width: 100%;
@@ -61,21 +61,21 @@
         
         <link rel="icon" href="https://i.postimg.cc/MKJm2kGp/favicon.png">
         
-        <link rel="preload" href="/Website/style.css" as="style" type="text/css">
-        <link rel="preload" href="/Website/cart.css" as="style" type="text/css">
+        <link rel="preload" href="/style.css" as="style" type="text/css">
+        <link rel="preload" href="/cart.css" as="style" type="text/css">
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style" type="text/css" crossorigin>
         <link rel="preload" href="https://i.postimg.cc/MKJm2kGp/favicon.png" as="image" type="image/png">
         <link rel="preload" href="https://i.postimg.cc/G9nCKgLp/green-Logo.png" as="image" type="image/png">
 
-        <script src="/Website/script.js" defer></script>
-        <script src="/Website/cart.js" defer></script>
+        <script src="/script.js" defer></script>
+        <script src="/cart.js" defer></script>
     </head>
     
     <body>
         
         <!-- NAVBAR START ============================================================-->
         <nav id="navbar"></nav>
-        <script src="/Website/navbar.js"></script>
+        <script src="/navbar.js"></script>
         <!--============================================================== NAVBAR END -->
         
         
@@ -87,7 +87,7 @@
                     <h1>Page Not Found</h1>
                     <p>Try searching or go to the homepage</p>
                     <div class="icon404" id="icon404"></div>
-                    <a href="/Website">
+                    <a href="">
                         Home <i class="fa-solid fa-square-arrow-up-right"></i>
                     </a>
                 </div>
@@ -99,7 +99,7 @@
         
         <!-- FOOTER START ============================================================-->
         <footer class="flex" id="footer"></footer>
-        <script src="/Website/footer.js"></script>
+        <script src="/footer.js"></script>
         <!--============================================================== FOOTER END -->
         
         

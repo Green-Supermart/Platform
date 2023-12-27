@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
-        <link rel="stylesheet" href="/Website/style.css">
+        <link rel="stylesheet" href="style.css">
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,12 +21,12 @@
         
         <link rel="icon" href="https://i.postimg.cc/MKJm2kGp/favicon.png">
         
-        <link rel="preload" href="/Website/style.css" as="style" type="text/css">
+        <link rel="preload" href="style.css" as="style" type="text/css">
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style" type="text/css" crossorigin>
         <link rel="preload" href="https://i.postimg.cc/MKJm2kGp/favicon.png" as="image" type="image/png">
         <link rel="preload" href="https://i.postimg.cc/G9nCKgLp/green-Logo.png" as="image" type="image/png">
         
-        <script src="/Website/script.js" defer></script>
+        <script src="script.js" defer></script>
     </head>
     
     <body>
@@ -34,7 +34,7 @@
         <div class="containerBlock flex" style="height: 100vh; width: 100%; justify-content: center; align-items: center;">
         <form id="registerForm" class="loginRegisterForm flex" action="registration" method="post">
             <div class="formContainer flex flexCol">
-                <div class="formLogo" onclick="window.location.href='/Website'">
+                <div class="formLogo" onclick="window.location.href='/'">
                     <img src="https://i.postimg.cc/G9nCKgLp/green-Logo.png">
                 </div>
                 <%-- Display error message if any --%>
@@ -49,13 +49,13 @@
                 <span class="termsCheckbox flex flexRow">
                     <input type="checkbox" required>
                     <span>
-                        I agree to the <a href="/Website/termsConditions.jsp">Terms & Conditions</a>
+                        I agree to the <a href="termsConditions.jsp">Terms & Conditions</a>
                     </span>
                 </span>
                 <button type="submit">Register</button>
                 <span class="formRedirector">
                     Existing User?
-                    <a href="/Website/login.jsp">Login</a>
+                    <a href="login.jsp">Login</a>
                 </span>
             </div>
         </form>
