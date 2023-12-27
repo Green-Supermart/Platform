@@ -6,7 +6,7 @@
 
 function navbarHTML() {
     var html = '<div class="navContainer">';
-    html += '<a class="navLogo" href="">';
+    html += '<a class="navLogo" href="/">';
     html += '<img src="https://i.postimg.cc/G9nCKgLp/green-Logo.png" alt="Logo">';
     html += '</a>';
     
@@ -17,7 +17,7 @@ function navbarHTML() {
     html += '<div class="catDropdownContent">';
     html += '<table>';
     html += '<tr>';
-    html += '<td><a href="ategories/beverages.jsp">Beverages</a></td>';
+    html += '<td><a href="categories/beverages.jsp">Beverages</a></td>';
     html += '<td><a href="categories/biscuits.jsp">Biscuits</a></td>';
     html += '<td><a href="categories/cereals.jsp">Cereals</a></td>';
     html += '</tr>';
