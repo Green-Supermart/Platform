@@ -55,18 +55,18 @@
                 <div class="flex flexRow" style="width: 100%; gap: 30px;">
                     <div class="flex" style="height: 290px; width: 290px; color: #242424; background: #FFFFFF; justify-content: center; align-items: center; border-radius: 10px;">
                         <div class="flex" style="width: 80%; height: 80%;">
-                            Profile Picture
+                            <img src="Assets/profile2.jpg">
                         </div>
                     </div>
                     <div class="flex flexCol" style="width: calc(100% - 310px); gap: 30px;">
                         <div class="flex" style="height: 130px; width: 100%; color: #242424; background: #FFFFFF; border-radius: 10px; justify-content: center; align-items: center;">
                             <div class="flex" style="width: 90%;">
-                                <h1 style="color: #1DA31A; font-size: 16px; font-weight: 400;">Full Name</h1>
+                                <h1 style="color: #1DA31A; font-size: 16px; font-weight: 400;"><%= request.getAttribute("fullName") %></h1>
                             </div>
                         </div>
                         <div class="flex" style="height: 130px; width: 100%; color: #242424; background: #FFFFFF; border-radius: 10px; justify-content: center; align-items: center;">
                             <div class="flex" style="width: 90%;">
-                                <h1 style="color: #1DA31A; font-size: 16px; font-weight: 400;">Email Address</h1>
+                                <h1 style="color: #1DA31A; font-size: 16px; font-weight: 400;"><%= request.getAttribute("email") %></h1>
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                 </div>
                 <div class="flex" style="height: 130px; width: 100%; color: #242424; background: #FFFFFF; border-radius: 10px; justify-content: center; align-items: center;">
                     <div class="flex" style="width: 90%;">
-                        <h1 style="color: #1DA31A; font-size: 16px; font-weight: 400;">Delivery Address</h1>
+                        <h1 style="color: #1DA31A; font-size: 16px; font-weight: 400;"><%= request.getAttribute("address") %></h1>
                     </div>
                 </div>
                 

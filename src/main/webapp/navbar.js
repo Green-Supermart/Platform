@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
  */
 
-
 function navbarHTML() {
     var html = '<div class="navContainer">';
     html += '<a class="navLogo" href="/">';
@@ -72,7 +71,7 @@ function navbarHTML() {
     html += '<a id="helpCenterLink" href="helpCenter.jsp">Help Center</a>';
     html += '<a id="registerLink" href="register.jsp">Register</a>';
     html += '<a id="loginLink" href="login.jsp">Login</a>';
-    html += '<span id="logoutLink">Logout</span>';
+    html += '<a id="logoutLink" onclick="logout()" href="/index.jsp">Log Out</a>';
     html += '</div>';
     
     html += '</div>';
@@ -230,3 +229,15 @@ userDropdown.addEventListener('click', function(event) {
 window.addEventListener('scroll', function() {
     userDropdown.classList.remove('userDropdownActive');
 });
+
+
+function logout(){
+    fetch('/logout')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}

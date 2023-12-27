@@ -38,7 +38,7 @@ public class login extends HttpServlet {
             if (resultSet.next()) {
                 HttpSession session = req.getSession();
                 session.setAttribute("userEmail", email);
-                resp.sendRedirect("/account.jsp");
+                resp.sendRedirect("/getUserData");
             } else {
                 resp.sendRedirect("../login/error.jsp");
             }
