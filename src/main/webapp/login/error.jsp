@@ -45,7 +45,6 @@
                         <i class="fa-solid fa-circle-exclamation"></i>
                         An error occurred
                     </p>
-                    
                     <button type="button" onclick="window.location.href='../login.jsp'">Try Again</button>
                     
                 </div>

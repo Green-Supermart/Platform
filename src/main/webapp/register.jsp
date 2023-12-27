@@ -32,20 +32,22 @@
     <body>
        
         <div class="containerBlock flex" style="height: 100vh; width: 100%; justify-content: center; align-items: center;">
-        <form id="registerForm" class="loginRegisterForm flex" action="registration" method="post">
+        <form id="registerForm" class="loginRegisterForm flex" action="/register" method="post">
             <div class="formContainer flex flexCol">
                 <div class="formLogo" onclick="window.location.href='/'">
-                    <img src="https://i.postimg.cc/G9nCKgLp/green-Logo.png">
+                    <img src="https://i.postimg.cc/G9nCKgLp/green-Logo.png" alt="">
                 </div>
-                <%-- Display error message if any --%>
-                <% if (request.getAttribute("errorMessage") != null) { %>
-                    <div class="errorMessage">
-                        <%= request.getAttribute("errorMessage") %>
-                    </div>
-                <% } %>
-                <input type="email" placeholder="Email Address" name="uemail" title="Email Address" required>
-                <input type="password" placeholder="Password" name="upass" title="Password" required>
-                <input type="password" placeholder="Confirm Password" name="conpass" title="Confirm Password" required>
+<%--                &lt;%&ndash; Display error message if any &ndash;%&gt;--%>
+<%--                <% if (request.getAttribute("errorMessage") != null) { %>--%>
+<%--                    <div class="errorMessage">--%>
+<%--                        <%= request.getAttribute("errorMessage") %>--%>
+<%--                    </div>--%>
+<%--                <% } %>--%>
+                <input type="text" placeholder="Full Name" name="name" title="Full Name" required>
+                <input type="email" placeholder="Email Address" name="email" title="Email Address" required>
+                <input type="text" placeholder="Address" name="address" title="Address" required>
+                <input type="password" placeholder="Password" name="password" title="Password" required>
+                <input type="password" placeholder="Confirm Password" name="conPassword" title="Confirm Password" required>
                 <span class="termsCheckbox flex flexRow">
                     <input type="checkbox" required>
                     <span>
