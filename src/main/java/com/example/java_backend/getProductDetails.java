@@ -25,7 +25,6 @@ public class getProductDetails extends HttpServlet {
         try {
             connection = dbConnection.getConnection();
 
-            // Define your SQL query to retrieve product data from the database
             String query = "SELECT id, productName, category, originalPrice, discountPrice, stockStatus, quantity, sku, imgLink FROM products";
 
             PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -42,9 +41,6 @@ public class getProductDetails extends HttpServlet {
                 int sku = resultSet.getInt("sku");
                 String image = resultSet.getString("imgLink");
 
-                //adding product data to the product constructor which inside the product class
-                //(The constructor itself initializes the private fields directly with the provided values.
-                // You don't need to call the setters separately in this case because the constructor already sets the values for you)
                 product obj = new product(id, name, category, orgPrice, discPrice, stockStatus, quantity, sku, image);
                 products.add(obj);
 
@@ -63,17 +59,13 @@ public class getProductDetails extends HttpServlet {
 
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            // Convert products list to JSON
             String jsonProducts = objectMapper.writeValueAsString(products);
-            // Set response content type to JSON
             resp.setContentType("application/json");
 
-            // Write JSON data to the response
             resp.getWriter().write(jsonProducts);
-            //System.out.println(jsonProducts);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
-            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR); // Set an appropriate HTTP status code
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
     }
 
