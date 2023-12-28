@@ -90,7 +90,6 @@ const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 let totalBillAmount = 0;
 
 
-
 // Use Promise.all to wait for all fetch operations to complete
     Promise.all(cartItems.map(item => {
         let arrayIndex = item.productId - 1;

@@ -16,33 +16,33 @@ function navbarHTML() {
     html += '<div class="catDropdownContent">';
     html += '<table>';
     html += '<tr>';
-    html += '<td><a href="categories/beverages.jsp">Beverages</a></td>';
-    html += '<td><a href="categories/biscuits.jsp">Biscuits</a></td>';
-    html += '<td><a href="categories/cereals.jsp">Cereals</a></td>';
+    html += '<td><a href="http://localhost:8090/categories/beverages.jsp">Beverages</a></td>';
+    html += '<td><a href="http://localhost:8090/categories/biscuits.jsp">Biscuits</a></td>';
+    html += '<td><a href="http://localhost:8090/categories/cereals.jsp">Cereals</a></td>';
     html += '</tr>';
     
     html += '<tr>';
-    html += '<td><a href="categories/cosmetics.jsp">Cosmetics</a></td>';
-    html += '<td><a href="categories/desserts.jsp">Desserts</a></td>';
-    html += '<td><a href="categories/flours.jsp">Flours</a></td>';
+    html += '<td><a href="http://localhost:8090/categories/cosmetics.jsp">Cosmetics</a></td>';
+    html += '<td><a href="http://localhost:8090/categories/desserts.jsp">Desserts</a></td>';
+    html += '<td><a href="http://localhost:8090/categories/flours.jsp">Flours</a></td>';
     html += '</tr>';
     
     html += '<tr>';
-    html += '<td><a href="categories/fruits.jsp">Fruits</a></td>';
-    html += '<td><a href="categories/medicine.jsp">Medicine</a></td>';
-    html += '<td><a href="categories/pastaNoodles.jsp">Pasta & Noodles</a></td>';
+    html += '<td><a href="http://localhost:8090/categories/fruits.jsp">Fruits</a></td>';
+    html += '<td><a href="http://localhost:8090/categories//medicine.jsp">Medicine</a></td>';
+    html += '<td><a href="http://localhost:8090/categories/pastaNoodles.jsp">Pasta & Noodles</a></td>';
     html += '</tr>';
     
     html += '<tr>';
-    html += '<td><a href="categories/sauces.jsp">Sauces</a></td>';
-    html += '<td><a href="/categories/snacks.jsp">Snacks</a></td>';
-    html += '<td><a href="categories/soapsLiquids.jsp">Soaps & Cleaning</a></td>';
+    html += '<td><a href="http://localhost:8090/categories/sauces.jsp">Sauces</a></td>';
+    html += '<td><a href="http://localhost:8090/categories/snacks.jsp">Snacks</a></td>';
+    html += '<td><a href="http://localhost:8090/categories/soapsLiquids.jsp">Soaps & Cleaning</a></td>';
     html += '</tr>';
     
     html += '<tr>';
-    html += '<td><a href="categories/spreads.jsp">Spreads</a></td>';
-    html += '<td><a href="categories/stationary.jsp">Stationary</a></td>';
-    html += '<td><a href="categories/vegetables.jsp">Vegetables</a></td>';
+    html += '<td><a href="http://localhost:8090/categories/spreads.jsp">Spreads</a></td>';
+    html += '<td><a href="http://localhost:8090/categories/stationary.jsp">Stationary</a></td>';
+    html += '<td><a href="http://localhost:8090/categories/vegetables.jsp">Vegetables</a></td>';
     html += '</tr>';
     html += '</table>';
     html += '</div>';
@@ -67,10 +67,10 @@ function navbarHTML() {
     
     html += '<div id="userDropdown" class="userDropdown">';
     html += '<a id="accountSettingsLink" href="/getUserData">Account Settings</a>';
-    html += '<a id="ordersLink" href="orders.jsp">Orders</a>';
-    html += '<a id="helpCenterLink" href="helpCenter.jsp">Help Center</a>';
-    html += '<a id="registerLink" href="register.jsp">Register</a>';
-    html += '<a id="loginLink" href="login.jsp">Login</a>';
+    html += '<a id="ordersLink" href="http://localhost:8090/orders.jsp">Orders</a>';
+    html += '<a id="helpCenterLink" href="http://localhost:8090/helpCenter.jsp">Help Center</a>';
+    html += '<a id="registerLink" href="http://localhost:8090/register.jsp">Register</a>';
+    html += '<a id="loginLink" href="http://localhost:8090/login.jsp">Login</a>';
     html += '<a id="logoutLink" onclick="logout()" href="/index.jsp">Log Out</a>';
     html += '</div>';
     

@@ -415,7 +415,7 @@ header h1{
 
 
 .cardsContainer{
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 60px;
 }
