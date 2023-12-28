@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
-        <link rel="stylesheet" href="/Website/admin/admin.css">
+        <link rel="stylesheet" href="../admin/admin.css">
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,12 +21,12 @@
         
         <link rel="icon" href="https://i.postimg.cc/MKJm2kGp/favicon.png">
         
-        <link rel="preload" href="/Website/admin/admin.css" as="style" type="text/css">
+        <link rel="preload" href="../admin/admin.css" as="style" type="text/css">
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style" type="text/css" crossorigin>
         <link rel="preload" href="https://i.postimg.cc/MKJm2kGp/favicon.png" as="image" type="image/png">
         <link rel="preload" href="https://i.postimg.cc/TwdpWvhk/admin-Logo.png" as="image" type="image/png">
         
-        <script src="/Website/admin/admin.js" defer></script>
+        <script src="../admin/admin.js" defer></script>
     </head>
     
     <body>
@@ -36,7 +36,7 @@
             <div class="navigation flex flexCol">
                 
                 <div class="navContainer flex flexCol">
-                    <div class="navLogo flex" onclick="window.location.href='/Website/admin/dashboard.jsp'">
+                    <div class="navLogo flex" onclick="window.location.href='../admin/dashboard.jsp'">
                         <img src="https://i.postimg.cc/TwdpWvhk/admin-Logo.png">
                     </div>
                     
@@ -48,21 +48,21 @@
                             Dashboard
                         </span>
                         
-                        <span class="navLink flex flexRow" onclick="window.location.href='/Website/admin/products.jsp'">
+                        <span class="navLink flex flexRow" onclick="window.location.href='/../admin/products.jsp'">
                             <span class="navLinkIcon flex">
                                 <i class="fa-solid fa-box"></i>
                             </span>
                             Products
                         </span>
                         
-                        <span class="navLink flex flexRow" onclick="window.location.href='/Website/admin/orders.jsp'">
+                        <span class="navLink flex flexRow" onclick="window.location.href='/../admin/orders.jsp'">
                             <span class="navLinkIcon flex">
                                 <i class="fa-solid fa-truck-fast"></i>
                             </span>
                             Orders
                         </span>
                         
-                        <span class="navLink flex flexRow" onclick="window.location.href='/Website/admin/feedback.jsp'">
+                        <span class="navLink flex flexRow" onclick="window.location.href='/../admin/feedback.jsp'">
                             <span class="navLinkIcon flex">
                                 <i class="fa-solid fa-comments"></i>
                             </span>
@@ -77,7 +77,7 @@
                 
                 <!-- TOPBAR START ============================================================-->
                 <div class="topBar flex" id="topBar"></div>
-                <script src="/Website/admin/topBar.js"></script>
+                <script src="../admin/topBar.js"></script>
                 <!--============================================================== TOPBAR END -->
                 
                 <div class="dashboardContent flex">

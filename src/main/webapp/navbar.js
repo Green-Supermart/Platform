@@ -108,7 +108,7 @@ function navbarHTML() {
     html += '<button id="cartCancelBtn" style="height: 100%; padding: 0 15px; color: #242424; background: #ECECEC; border: none; border-radius: 5px; outline: none; cursor: pointer;">Cancel</button>';
     html += '<button id="cartAddBtn" style="height: 100%; padding: 0 15px; color: #ECECEC; background: #1DA31A; border: none; border-radius: 5px; outline: none; cursor: pointer;">Checkout</button>';
     html += '</div>';
-    
+
     html += '</div>';
     // cartBox end
     html += '</div>';

@@ -5,7 +5,7 @@ const cartBox = document.getElementById("cartBox");
 const cartCancelBtn = document.getElementById("cartCancelBtn");
 const cartListContainer = document.getElementById("cartListContainer");
 const cartList = document.getElementById("cartList");
-
+const cartAddBtn = document.getElementById("cartAddBtn");
 
 
 function noScroll() {
@@ -179,7 +179,10 @@ function removeFromCart(productId) {
     }
 }
 
-
+ //whenever cartAddBtn is clicked, navigate into checkout pg
+ cartAddBtn.addEventListener('click', function() {
+     window.location.href = 'http://localhost:8090/Checkout/Checkoutnew.jsp';
+ });
 
 
 // // load cartList from localStorage every time the page is loaded and every 1 second
