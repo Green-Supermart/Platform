@@ -49,23 +49,23 @@
                     
                     <div class="breadcrumb flex flexRow" style="gap: 10px; font-size: 14px; align-items: center;">
                         <span class="prevLinks flex flexRow" style="gap: 10px; align-items: center;">
-                            <a style="color: #1DA31A;" href="">Category</a>
+                            <a id="BreadcrumbCategory" style="color: #1DA31A;" href="">Category</a>
                             <i class="fa-solid fa-chevron-right" style="color: #242424; font-size: 10px;"></i>
                         </span>
-                        <span class="currentLink">Product</span>
+                        <span id="BreadcrumbName"  class="currentLink">Product</span>
                     </div>
                     
                     <div class="flex flexRow" style="width: 100%; align-items: start; justify-content: start; gap: 70px;">
                         
                         <div style="width: 400px; height: 400px; border-radius: 5px; border: 2px solid #1DA31A;">
-                            <img style="width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 5px;" src="https://i.postimg.cc/brf9L1tT/placeholder.png" alt="Product Image">
+                            <img id="myImage" style="width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 5px;" src="https://i.postimg.cc/brf9L1tT/placeholder.png" alt="Product Image">
                         </div>
                         
                         <div class="productInfo flex flexCol" style="width: calc(100% - 470px); gap: 30px;">
                             
                             <div class="flex flexRow" style="width: 100%; height: auto; align-items: center; justify-content: space-between;">
                                 <span class="flex flexCol" style="width: 80%; height: auto; gap: 5px;">
-                                    <h1 style="width: 100%; color: #1DA31A; font-size: 28px; font-weight: 500;">Product Title</h1>
+                                    <h1 id="productName" style="width: 100%; color: #1DA31A; font-size: 28px; font-weight: 500;">Product Title</h1>
                                     <h2 style="width: 100%; color: #242424; font-size: 14px; font-weight: 300;">By Manufacturer</h2>
                                 </span>
                                 
@@ -107,15 +107,15 @@
                             </div>
                             
                             <div class="flex flexRow" style="align-items: center; gap: 10px;">
-                                <h1 style="color: #1DA31A; font-weight: 400; font-size: 18px;">Rs. 152.00</h1>
-                                <h1 style="color: #808080; font-weight: 300; font-size: 14px; text-decoration-color: #808080; text-decoration-line: line-through; text-decoration-thickness: 1.5px;">Rs. 190.00</h1>
+                                <h1 id="discPrice" style="color: #1DA31A; font-weight: 400; font-size: 18px;">Rs. 152.00</h1>
+                                <h1 id="orgPrice" style="color: #808080; font-weight: 300; font-size: 14px; text-decoration-color: #808080; text-decoration-line: line-through; text-decoration-thickness: 1.5px;">Rs. 190.00</h1>
                             </div>
                             
                             <span class="flex flexRow" style="width: 100%; height: 35px; gap: 40px;">
                                 <span class="flex flexRow" style="align-items: center; gap: 15px;">
                                     <label>Quantity:</label>
                                     
-                                    <select style="width: 60px; height: 100%; padding: 0 15px; border: none; background: #FFF; border-radius: 5px; cursor: pointer;" required>
+                                    <select id="quantitySelect" style="width: 60px; height: 100%; padding: 0 15px; border: none; background: #FFF; border-radius: 5px; cursor: pointer;" required>
                                         <option value="1" selected>1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -129,7 +129,7 @@
                                     </select>
                                 </span>
                                 
-                                <button type="button" style="width: 250px; height: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; background: #1DA31A; color: #ECECEC; border-radius: 5px; border: none;">
+                                <button onclick="addToCart()" type="button" style="width: 250px; height: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; background: #1DA31A; color: #ECECEC; border-radius: 5px; border: none;">
                                     <i class="fa-solid fa-shopping-cart"></i> Add to Cart
                                 </button>
                             </span>
@@ -146,6 +146,95 @@
                 
             </div>
         </div>
+
+
+
+
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function () {
+                // Fetch product details based on productId from URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const productId = urlParams.get('productId');
+
+                fetch('/getProductDetails')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Filter product details based on productId
+                        const productDetails = data.find(product => product.id === parseInt(productId));
+
+                        // Display product details
+                        if (productDetails) {
+                            const name = productDetails.name;
+                            const orgPrice = productDetails.orgPrice;
+                            const discPrice = productDetails.discPrice.toFixed(2);
+                            const category = productDetails.category;
+                            const imgURL = productDetails.image;
+                            const imageElement = document.getElementById("myImage");
+                            imageElement.src = imgURL;
+
+                            const demoPara = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                       velit esse`
+
+
+                            document.getElementById('BreadcrumbCategory').innerText = category;
+                            document.getElementById('BreadcrumbName').innerText = name;
+                            document.getElementById('productName').innerText = name;
+                            // document.getElementById('productDescription').innerText = demoPara;
+                            document.getElementById('discPrice').innerText = `Rs `+discPrice+`.00`;
+                            document.getElementById('orgPrice').innerText = `Rs `+orgPrice+`.00`;
+                        } else {
+                            console.error('Product not found.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching data:', error);
+                    });
+            });
+
+
+
+            function getProductIdFromURL() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const productId = urlParams.get('productId');
+
+                // Parse the productId as an integer
+                return productId ? parseInt(productId, 10) : null;
+            }
+
+
+
+            // adding products to the cart
+            function addToCart() {
+                let productId = getProductIdFromURL();
+
+                let quantityIntValue = parseInt(document.getElementById("quantitySelect").value);
+                console.log(quantityIntValue);
+
+                // Get existing cart items or initialize an empty array
+                let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+                // Check if the product ID is already in the cart
+                const existingItem = cartItems.find(item => item.productId === productId);
+
+                if (existingItem) {
+                    // Increment the quantity if the product is already in the cart
+                    existingItem.quantity = existingItem.quantity+ quantityIntValue;
+                } else {
+                    // Add the new product to the cart with quantity 1
+                    cartItems.push({ productId, quantity: quantityIntValue });
+                }
+
+                // Update the cart in localStorage
+                localStorage.setItem("cart", JSON.stringify(cartItems));
+
+                // Provide feedback to the user (optional)
+                 alert("Product added to cart!");
+            }
+        </script>
         <!--======================================================== PAGE-CONTENT END -->
         
         

@@ -101,13 +101,13 @@
                                 </div>
                                 <div class="productContent flex flexCol">
                                     <h1>
-                                        <a href="">
+                                        <a href="/singleProduct.jsp?productId=`+id+`">
                                             ` +name+ `
                                         </a>
                                     </h1>
                                     <span class="productPrice flex flexRow">
-                                        <h2 class="price">Rs. ` +orgPrice+ `.00</h2>
-                                        <h2 class="discPrice">Rs. ` +discPrice+ `.00</h2>
+                                        <h2 class="price">Rs. ` +discPrice+ `.00</h2>
+                                        <h2 class="discPrice">Rs. ` +orgPrice+ `.00</h2>
                                     </span>
                                     <button class="addToCartBtn flex flexRow" onclick="addToCart(`+id+`)">
                                         <i class="fa-solid fa-cart-plus"></i>
