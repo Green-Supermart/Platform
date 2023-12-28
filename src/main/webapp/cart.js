@@ -1,6 +1,3 @@
-
-
-
 const cartIcon = document.getElementById("cartIcon");
 const cartBackdrop = document.getElementById("cartBackdrop");
 const cartBackIcon = document.getElementById("cartBackIcon");
@@ -32,6 +29,8 @@ function hideCart() {
     cartBox.style.display = "none";
     document.body.style.overflow = "auto";
 }
+
+
 
 
 cartIcon.addEventListener('click', function() {
@@ -89,72 +88,71 @@ document.addEventListener('keydown', function(event) {
 // Retrieve cart items from localStorage
 const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 let totalBillAmount = 0;
-let totalProductCount = 0;
 
-// const containerCart = document.getElementById('cartList');
+
 
 // Use Promise.all to wait for all fetch operations to complete
-Promise.all(cartItems.map(item => {
-    let arrayIndex = item.productId - 1;
+    Promise.all(cartItems.map(item => {
+        let arrayIndex = item.productId - 1;
 
-    // Fetch product details from the /retrieveProducts servlet for each item
-    return fetch(`/getProductDetails?id=`+item.productId)
-        .then(response => response.json())
-        .then(productDetails => {
-            const singleProduct = productDetails[arrayIndex]; // getting relevant product details (arrayIndex) by subtracting productId from 1
+        // Fetch product details from the /retrieveProducts servlet for each item
+        return fetch(`/getProductDetails?id=` + item.productId)
+            .then(response => response.json())
+            .then(productDetails => {
+                const singleProduct = productDetails[arrayIndex]; // getting relevant product details (arrayIndex) by subtracting productId from 1
 
-            if (singleProduct) {
-                const price = singleProduct.discPrice;
-                const quantity = item.quantity;
-                let subTotal = 0;
+                if (singleProduct) {
+                    const price = singleProduct.discPrice;
+                    const quantity = item.quantity;
+                    let subTotal = 0;
 
-                // Update total bill amount
-                totalBillAmount += price * quantity;
+                    // Update total bill amount
+                    totalBillAmount += price * quantity;
 
-                //create subtotal amount
-                subTotal = price * quantity;
+                    //create subtotal amount
+                    subTotal = price * quantity;
 
 
-                // Display product details in your HTML
-                const cartItemElement = document.createElement('div');
-                //cartItemElement.className = 'cart-item';
-                cartItemElement.classList.add('cartItem');
+                    // Display product details in your HTML
+                    const cartItemElement = document.createElement('div');
+                    //cartItemElement.className = 'cart-item';
+                    cartItemElement.classList.add('cartItem');
 
-                const cartItemHTML =
-                    `
+                    const cartItemHTML =
+                        `
                         <div style="height: 100%; width: 70px;">
-                            <img style="height: 100%; width: 100%; object-fit: cover; border-radius: 5px;" src="`+singleProduct.image+`" alt="Product Image">
+                            <img style="height: 100%; width: 100%; object-fit: cover; border-radius: 5px;" src="` + singleProduct.image + `" alt="Product Image">
                         </div>
                         <div style="height: 100%; width: calc(100% - 165px); display: flex; flex-direction: column; justify-content: center;">
-                            <h1 style="font-size: 12px; font-weight: 400;">`+singleProduct.name+`</h1>
-                            <h2 style="font-size: 10px; font-weight: 300;">`+quantity+`</h2>
+                            <h1 style="font-size: 12px; font-weight: 400;">` + singleProduct.name + `</h1>
+                            <h2 style="font-size: 10px; font-weight: 300;">` + quantity + `</h2>
                         </div>
                         <div class="cartItemAction" style="height: 100%; width: 70px; display: flex; justify-content: end; align-items: center; margin-right: 15px;">
-                            <i onclick="removeFromCart(`+item.productId+`)" class="fa-solid fa-trash-can"></i>
-                            <p class="cartItemPrice">Rs. <span class="cartItemPrice">`+subTotal+`</span></p>
+                            <i onclick="removeFromCart(` + item.productId + `)" class="fa-solid fa-trash-can"></i>
+                            <p class="cartItemPrice">Rs. <span class="cartItemPrice">` + subTotal + `</span></p>
                         </div>
                          `;
 
-                // Populate the cart item with product data
-                cartItemElement.innerHTML = cartItemHTML;
+                    // Populate the cart item with product data
+                    cartItemElement.innerHTML = cartItemHTML;
 
-                // Append the cart item to the containerCart
-                cartList.appendChild(cartItemElement);
-            } else {
-                console.error(`Product with ID `+item.productId+` not found`);
-            }
+                    // Append the cart item to the containerCart
+                    cartList.appendChild(cartItemElement);
+                } else {
+                    console.error(`Product with ID ` + item.productId + ` not found`);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching product details:', error);
+            });
+    }))
+        .then(() => {
+            // Display the total bill amount and total product count
+            document.getElementById('cartTotalPrice').innerText = `Rs ` + totalBillAmount;
         })
         .catch(error => {
             console.error('Error fetching product details:', error);
         });
-}))
-    .then(() => {
-        // Display the total bill amount and total product count
-        document.getElementById('cartTotalPrice').innerText = `Rs `+totalBillAmount;
-    })
-    .catch(error => {
-        console.error('Error fetching product details:', error);
-    });
 
 
 function removeFromCart(productId) {
@@ -173,6 +171,8 @@ function removeFromCart(productId) {
 
         // Provide feedback to the user (optional)
         alert("Product removed from cart!");
+        location.reload();
+
     } else {
         // Product not found in the cart
         // You can handle this case as needed
@@ -183,13 +183,15 @@ function removeFromCart(productId) {
 
 
 
-
-
-
-
-
-
-
+// // load cartList from localStorage every time the page is loaded and every 1 second
+// window.addEventListener('load', function() {
+//     cartList.innerHTML = localStorage.getItem('cart');
+// });
+// setInterval(function() {
+//     cartList.innerHTML = localStorage.getItem('cart');
+// }, 5000);
+//
+//
 
 
 

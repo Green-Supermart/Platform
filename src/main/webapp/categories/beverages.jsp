@@ -152,6 +152,7 @@
 
                 // Provide feedback to the user (optional)
                 alert("Product added to cart!");
+                location.reload();
             }
         </script>
 
