@@ -60,6 +60,9 @@ public class getUserData extends HttpServlet {
             req.setAttribute("address", address);
             req.setAttribute("email", userEmail);
 
+            // Set the address in HttpSession, cuz address need to access in the checkout pg
+            session.setAttribute("address", address);
+
             // Forward the request to the "accDetails.jsp" page
             RequestDispatcher dispatcher = req.getRequestDispatcher("account.jsp");
             dispatcher.forward(req, resp);

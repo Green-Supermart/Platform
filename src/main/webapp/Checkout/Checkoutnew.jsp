@@ -98,13 +98,17 @@
                     </div>
                 </div>
 
+                <%
+                    // Get the userAddress from the session
+                    String userAddress = (String) session.getAttribute("address");
+                %>
                 <div class="helpCardsContainer flex flexCol" style="margin-bottom: 40px;">
                     <div class="helpLink flex flexRow">
 
                         <div class="linkContent flex">
                             <div class="linkText flex flexCol">
                                 <h1>Delivery address</h1>
-                                <h1 style="color:black; font-size:20px;">123, York Street, New York, USA. </h1>
+                                <h1 style="color:black; font-size:20px;"><%= userAddress %></h1>
                             </div>
 
                             <a href="">
