@@ -20,7 +20,8 @@ public class getUserData extends HttpServlet {
         String userEmail = (String) session.getAttribute("userEmail");
 
         if (userEmail == null) {
-            resp.sendRedirect("login.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("login.jsp");
+            dispatcher.forward(req, resp);
         } else {
             String fullName = "";
             String address = "";

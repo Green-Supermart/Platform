@@ -45,11 +45,11 @@
                     </div>
                     
                     <p class="stateMessage">
-                        <i class="fa-solid fa-circle-exclamation" style="color: #00b33e;"></i>
-                        Order Cannot be Placed
+                        Order Cannot be Placed <i class="fa-solid fa-circle-exclamation" style="color: #00b33e;"></i> <br>
+                        Please be log in before placing an order.
                     </p>
                     
-                    <button type="button" onclick="window.location.href='/../'">Try Again</button>
+                    <button type="button" onclick="window.location.href='/../login.jsp'">Log in</button>
                     
                 </div>
                 

@@ -181,7 +181,7 @@ function removeFromCart(productId) {
 
  //whenever cartAddBtn is clicked, navigate into checkout pg
  cartAddBtn.addEventListener('click', function() {
-     window.location.href = 'http://localhost:8090/Checkout/Checkoutnew.jsp';
+     window.location.href = 'http://localhost:8090/isLogged';
  });
 
 
