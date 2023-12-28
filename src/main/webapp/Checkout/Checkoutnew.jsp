@@ -49,30 +49,6 @@
                         <table>
                             <tbody id="cartContainer">
 
-<%--                            <tr>--%>
-<%--                                <td>--%>
-<%--                                    <a href="">--%>
-<%--                                        <i class="fa-solid fa-trash-can" style="color: #808080;"></i>--%>
-<%--                                    </a>--%>
-<%--                                </td>--%>
-<%--                                <td>--%>
-<%--                                    <img src="https://i.postimg.cc/brf9L1tT/placeholder.png" alt="Image 1" class="COImage">--%>
-<%--                                </td>--%>
-<%--                                <td>--%>
-<%--                                    <div class="COItem">Item 01</div>--%>
-<%--                                </td>--%>
-<%--                                <td style="width: 76%; text-align: right;">--%>
-<%--                                    <div class="COquantity">--%>
-<%--                                        ×3--%>
-<%--                                    </div>--%>
-<%--                                </td>--%>
-<%--                                <td style="width: 8%; text-align: right;">--%>
-<%--                                    <div class="COprice" >--%>
-<%--                                        180--%>
-<%--                                    </div>--%>
-<%--                                </td>--%>
-<%--                            </tr>--%>
-
                             </tbody>
                         </table>
 
@@ -126,12 +102,13 @@
 
 
          <script>
-             const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-             let totalBillAmount = 0;
+
+             const FinaleCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+             let finaleTotalBillAmount = 0;
 
              const containerNew = document.getElementById('cartContainer');
 
-             Promise.all(cartItems.map(item => {
+             Promise.all(FinaleCartItems.map(item => {
                  let arrayIndex = item.productId - 1;
 
                  return fetch(`/getProductDetails?id=`+item.productId)
@@ -144,7 +121,7 @@
                              const quantity = item.quantity;
                              let subTotal = 0;
 
-                             totalBillAmount += price * quantity;
+                             finaleTotalBillAmount += price * quantity;
 
                              subTotal = price * quantity;
 
@@ -187,7 +164,7 @@
                      });
              }))
                  .then(() => {
-                     document.getElementById('totalBill').innerText = `Rs. `+totalBillAmount.toFixed(2);
+                     document.getElementById('totalBill').innerText = `Rs. `+finaleTotalBillAmount.toFixed(2);
                  })
                  .catch(error => {
                      console.error('Error fetching product details:', error);
@@ -196,17 +173,17 @@
 
              function removeFromCart(productId) {
                  // Get existing cart items or initialize an empty array
-                 let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+                 let FinaleCartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
                  // Find the index of the product with the given ID in the cart
-                 const productIndex = cartItems.findIndex(item => item.productId === productId);
+                 const productIndex = FinaleCartItems.findIndex(item => item.productId === productId);
 
                  if (productIndex !== -1) {
                      // Remove the product from the cart array
-                     cartItems.splice(productIndex, 1);
+                     FinaleCartItems.splice(productIndex, 1);
 
                      // Update the cart in localStorage
-                     localStorage.setItem("cart", JSON.stringify(cartItems));
+                     localStorage.setItem("cart", JSON.stringify(FinaleCartItems));
 
                      // Provide feedback to the user (optional)
                      alert("Product removed from cart!");
@@ -218,6 +195,17 @@
                      alert("Product not found in cart!");
                  }
              }
+
+
+             //display cart empty message
+             const tableBody = document.getElementById("cartContainer")
+
+             // check if there is any cartItem in cartList, if not, show "Your cart is empty" message
+             setInterval(function() {
+                 if (tableBody.getElementsByTagName('tr').length === 0) {
+                     tableBody.innerHTML = `<tr style="height: 200px"> <p id="cartEmptyMsg" style="display: flex; height: calc(100% - 200px); width: 90%; color: #808080; background: #ffffff; justify-content: center; align-items: center; font-size: 14px; font-weight: 300; position: absolute; top: 70px;">Your cart is empty</p> </tr>`;
+                 }
+             }, 1000);
          </script>
 
 
