@@ -95,7 +95,7 @@
                 </div>
 
                 <div class="CObuttoncon flex">
-                    <button class="CObutton">Checkout</button>
+                    <button id="checkoutButton" class="CObutton">Checkout</button>
                 </div>
             </div>
         </div>
@@ -206,6 +206,61 @@
                      tableBody.innerHTML = `<tr style="height: 200px"> <p id="cartEmptyMsg" style="display: flex; height: calc(100% - 200px); width: 90%; color: #808080; background: #ffffff; justify-content: center; align-items: center; font-size: 14px; font-weight: 300; position: absolute; top: 70px;">Your cart is empty</p> </tr>`;
                  }
              }, 1000);
+
+
+
+
+
+
+             // Assume you have a function to get the product count and details
+             function getOrderDetails() {
+                 // Fetch order details from localStorage or any other source
+                 return FinaleCartItems.map(item => ({ productId: item.productId, quantity: item.quantity }));
+             }
+
+             // Function to handle the checkout process
+             function checkout() {
+                 const orderDetails = getOrderDetails();
+
+                 // Make sure there are items in the cart before proceeding with checkout
+                 if (orderDetails.length === 0) {
+                     alert('Your cart is empty. Add items before checking out.');
+                     return;
+                 }
+
+                 console.log(orderDetails)
+                 //Send order details to the backend using fetch API
+                 fetch('/getOrderData', {
+                     method: 'POST',
+                     headers: {
+                         'Content-Type': 'application/json',
+                     },
+                     body: JSON.stringify({ orderDetails }),
+                 })
+                     .then(response => {
+                         if (response.ok) {
+                             // Order was successful, you can handle success accordingly
+                             console.log('Order placed successfully!');
+                             // Optionally, you can clear the cart after successful order
+                             localStorage.removeItem('cart');
+                             //set payment amount in localstorage
+                             localStorage.setItem('payment', finaleTotalBillAmount);
+                             // Redirect to payment.jsp
+                             window.location.href = 'payment.jsp';
+                         } else {
+                             // Handle errors or failed orders
+                             console.error('Error placing order:', response.statusText);
+                         }
+                     })
+                     .catch(error => {
+                         console.error('Error during fetch:', error);
+                     });
+             }
+
+             // Attach the checkout function to the button click event
+             document.getElementById('checkoutButton').addEventListener('click', checkout);
+
+
          </script>
 
 

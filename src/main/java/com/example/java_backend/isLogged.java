@@ -12,12 +12,10 @@ import jakarta.servlet.annotation.*;
 public class isLogged extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("hi");
         HttpSession session = req.getSession();
         String userEmail = (String) session.getAttribute("userEmail");
 
         if (userEmail == null) {
-            System.out.println("awa");
             RequestDispatcher dispatcher = req.getRequestDispatcher("Checkout/errornew.jsp");
             dispatcher.forward(req, resp);
 

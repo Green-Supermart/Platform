@@ -40,7 +40,7 @@ public class register extends HttpServlet {
                 HttpSession session = req.getSession();
                 session.setAttribute("userEmail", email);
 
-                resp.sendRedirect("/account.jsp");
+                resp.sendRedirect("/getUserData");
             } else {
                 resp.sendRedirect("../login/error.jsp");
             }

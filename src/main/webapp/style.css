@@ -703,7 +703,16 @@ section ul li::before{
     gap: 10px;
 }
 
-
+.paymentForm {
+    width: 80%;
+    height: auto;
+    color: #242424;
+    background: #FFFFFF;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+}
 
 .loginRegisterForm{
     width: 30%;
