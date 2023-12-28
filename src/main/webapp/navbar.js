@@ -29,7 +29,7 @@ function navbarHTML() {
     
     html += '<tr>';
     html += '<td><a href="http://localhost:8090/categories/fruits.jsp">Fruits</a></td>';
-    html += '<td><a href="http://localhost:8090/categories//medicine.jsp">Medicine</a></td>';
+    html += '<td><a href="http://localhost:8090/categories/medicine.jsp">Medicine</a></td>';
     html += '<td><a href="http://localhost:8090/categories/pastaNoodles.jsp">Pasta & Noodles</a></td>';
     html += '</tr>';
     
