@@ -20,14 +20,14 @@ public class sendEmail {
         // Create an email session
         Session session = Session.getInstance(properties, new Authenticator() {
             protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
-                return new javax.mail.PasswordAuthentication("", "");
+                return new javax.mail.PasswordAuthentication("greensupermartlk@gmail.com", "");
             }
         });
 
         try {
             // Create a message
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("")); // Replace with your email
+            message.setFrom(new InternetAddress("greensupermartlk@gmail.com")); // Replace with your email
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail));
             message.setSubject(subject);
             message.setText(messageBody);
