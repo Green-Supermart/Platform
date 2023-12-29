@@ -1,6 +1,6 @@
 <%-- 
-    Document   : resetPassword
-    Created on : 5 Dec 2023, 16:57:48
+    Document   : error
+    Created on : 5 Dec 2023, 15:53:54
     Author     : Sandun
 --%>
 
@@ -17,7 +17,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
         
-        <title>Reset Your Password - Login | GREEN Supermart</title>
+        <title>Login Unsuccessful | GREEN Supermart</title>
         
         <link rel="icon" href="https://i.postimg.cc/MKJm2kGp/favicon.png">
         
@@ -33,21 +33,19 @@
         
         <div class="containerBlock flex" style="height: 100vh; width: 100%; justify-content: center; align-items: center;">
             
-            <form id="resetPasswordForm" class="loginRegisterForm flex" method="post" action="/updatePassword">
+            <form id="resetErrorForm" class="loginRegisterForm flex" action="" method="">
                 
                 <div class="formContainer flex flexCol">
                     
-                    <div class="formLogo" onclick="window.location.href='../'">
+                    <div class="formLogo" onclick="window.location.href='/../'">
                         <img src="https://i.postimg.cc/G9nCKgLp/green-Logo.png">
                     </div>
                     
-                    <p>Enter your new password:</p>
-                    
-                    <input type="password" placeholder="New Password" title="New Password" name="password" required>
-                    
-                    <input type="password" placeholder="Confirm Password" title="Confirm Password" name="conPassword" required>
-                    
-                    <button type="submit">Confirm</button>
+                    <p class="stateMessage">
+                        Password and Confirm Password do not match.
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </p>
+                    <button type="button" onclick="window.location.href='http://localhost:8090/login/resetPassword.jsp'">Try Again</button>
                     
                 </div>
                 

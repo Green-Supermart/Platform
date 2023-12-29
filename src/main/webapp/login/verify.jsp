@@ -33,7 +33,7 @@
         
         <div class="containerBlock flex" style="height: 100vh; width: 100%; justify-content: center; align-items: center;">
             
-            <form id="loginVerifyForm" class="loginRegisterForm flex" action="" method="">
+            <form id="loginVerifyForm" class="loginRegisterForm flex" action="/verifyOTP" method="post">
                 
                 <div class="formContainer flex flexCol">
                     
@@ -41,10 +41,10 @@
                         <img src="https://i.postimg.cc/G9nCKgLp/green-Logo.png">
                     </div>
                     
-                    <p>A verification code has been sent to <span id="formEmail">john@doe.com</span><br><br>
+                    <p>A verification code has been sent.<br>
                         Enter verification code:</p>
                     
-                    <input type="text" placeholder="eg: 1234" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" required>
+                    <input type="text" placeholder="eg: 123456" name="userEnteredOTP" required>
                     
                     <button type="submit">Confirm</button>
                     

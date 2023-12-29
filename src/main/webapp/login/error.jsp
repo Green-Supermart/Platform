@@ -42,10 +42,10 @@
                     </div>
                     
                     <p class="stateMessage">
+                        Entered OTP is incorrect
                         <i class="fa-solid fa-circle-exclamation"></i>
-                        An error occurred
                     </p>
-                    <button type="button" onclick="window.location.href='../login.jsp'">Try Again</button>
+                    <button type="button" onclick="window.location.href='http://localhost:8090/login/verify.jsp'">Try Again</button>
                     
                 </div>
                 

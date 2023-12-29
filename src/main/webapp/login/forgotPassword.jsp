@@ -33,7 +33,7 @@
         
         <div class="containerBlock flex" style="height: 100vh; width: 100%; justify-content: center; align-items: center;">
             
-            <form id="forgotPasswordForm" class="loginRegisterForm flex" action="" method="">
+            <form id="forgotPasswordForm" class="loginRegisterForm flex" action="/sendOTP" method="post">
                 
                 <div class="formContainer flex flexCol">
                     
@@ -41,11 +41,11 @@
                         <img src="https://i.postimg.cc/G9nCKgLp/green-Logo.png">
                     </div>
                     
-                    <p>Enter your email address to reset password:</p>
+                    <p style="margin-bottom: 10px;">Enter your email, we'll send a code to reset your password.</p>
                     
-                    <input type="email" placeholder="Email Address" title="Email Address" required>
+                    <input type="email" placeholder="Email Address" name="emailForOTP" title="Email Address" required>
                     
-                    <button type="submit">Confirm</button>
+                    <button type="submit">Send OTP</button>
                     
                 </div>
                 
