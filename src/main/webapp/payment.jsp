@@ -64,17 +64,15 @@
              const billAmountInRS = (retrievedTotalBillAmount / 325).toFixed(2);
              paypal.Buttons({
                  createOrder: function(data, actions) {
-                     // Set up the transaction details
                      return actions.order.create({
                          purchase_units: [{
                              amount: {
-                                 value: billAmountInRS // Set the amount based on your checkout total
+                                 value: billAmountInRS
                              }
                          }]
                      });
                  },
                  onApprove: function(data, actions) {
-                     // Redirect to your PayPalServlet with the order ID
                      return actions.order.capture().then(function(details) {
                          window.location.href = 'paymentStatus?orderID=' + data.orderID;
                      });

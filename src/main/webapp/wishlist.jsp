@@ -144,24 +144,18 @@
 
 
             function addToCart(productId) {
-                // Get existing cart items or initialize an empty array
                 let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
-                // Check if the product ID is already in the cart
                 const existingItem = cartItems.find(item => item.productId === productId);
 
                 if (existingItem) {
-                    // Increment the quantity if the product is already in the cart
                     existingItem.quantity++;
                 } else {
-                    // Add the new product to the cart with quantity 1
                     cartItems.push({ productId, quantity: 1 });
                 }
 
-                // Update the cart in localStorage
                 localStorage.setItem("cart", JSON.stringify(cartItems));
 
-                // Provide feedback to the user (optional)
                 alert("Product added to cart!");
                 removeFromWishlist(productId);
                 location.reload();
@@ -169,26 +163,17 @@
 
 
             function removeFromWishlist(productId) {
-                // Get existing wishlist items or initialize an empty array
                 let wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || [];
 
-                // Find the index of the product with the given ID in the wishlist
                 const productIndex = wishlistItems.findIndex(item => item.productId === productId);
 
                 if (productIndex !== -1) {
-                    // Remove the product from the wishlist array
                     wishlistItems.splice(productIndex, 1);
 
-                    // Update the wishlist in localStorage
                     localStorage.setItem("wishlist", JSON.stringify(wishlistItems));
-
-                    // Provide feedback to the user (optional)
-                    //alert("Product removed from wishlist!");
                     location.reload();
 
                 } else {
-                    // Product not found in the cart
-                    // You can handle this case as needed
                     alert("Product not found in wishlist!");
                 }
             }

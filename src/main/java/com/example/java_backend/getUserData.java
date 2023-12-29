@@ -38,7 +38,6 @@ public class getUserData extends HttpServlet {
 
                 ResultSet resultSet = preparedStatement.executeQuery();
                 if (resultSet.next()) {
-                    // Retrieve user details from the result set
                     fullName = resultSet.getString("name");
                     address = resultSet.getString("address");
                     password = resultSet.getString("password");
@@ -56,15 +55,12 @@ public class getUserData extends HttpServlet {
                 }
             }
 
-            // Set the retrieved details as request attributes
             req.setAttribute("fullName", fullName);
             req.setAttribute("address", address);
             req.setAttribute("email", userEmail);
 
-            // Set the address in HttpSession, cuz address need to access in the checkout pg
             session.setAttribute("address", address);
 
-            // Forward the request to the "accDetails.jsp" page
             RequestDispatcher dispatcher = req.getRequestDispatcher("account.jsp");
             dispatcher.forward(req, resp);
         }

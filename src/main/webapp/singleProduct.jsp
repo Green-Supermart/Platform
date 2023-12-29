@@ -153,17 +153,14 @@
         <script>
 
             document.addEventListener('DOMContentLoaded', function () {
-                // Fetch product details based on productId from URL
                 const urlParams = new URLSearchParams(window.location.search);
                 const productId = urlParams.get('productId');
 
                 fetch('/getProductDetails')
                     .then(response => response.json())
                     .then(data => {
-                        // Filter product details based on productId
                         const productDetails = data.find(product => product.id === parseInt(productId));
 
-                        // Display product details
                         if (productDetails) {
                             const name = productDetails.name;
                             const orgPrice = productDetails.orgPrice;
@@ -201,37 +198,30 @@
                 const urlParams = new URLSearchParams(window.location.search);
                 const productId = urlParams.get('productId');
 
-                // Parse the productId as an integer
                 return productId ? parseInt(productId, 10) : null;
             }
 
 
 
-            // adding products to the cart
+
             function addToCart() {
                 let productId = getProductIdFromURL();
 
                 let quantityIntValue = parseInt(document.getElementById("quantitySelect").value);
                 console.log(quantityIntValue);
 
-                // Get existing cart items or initialize an empty array
                 let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
-                // Check if the product ID is already in the cart
                 const existingItem = cartItems.find(item => item.productId === productId);
 
                 if (existingItem) {
-                    // Increment the quantity if the product is already in the cart
                     existingItem.quantity = existingItem.quantity+ quantityIntValue;
                 } else {
-                    // Add the new product to the cart with quantity 1
                     cartItems.push({ productId, quantity: quantityIntValue });
                 }
 
-                // Update the cart in localStorage
                 localStorage.setItem("cart", JSON.stringify(cartItems));
-
-                // Provide feedback to the user (optional)
+                
                  alert("Product added to cart!");
                 location.reload();
             }
