@@ -85,7 +85,7 @@
                             </div>
                             <div class="productContent flex flexCol">
                                 <h1>
-                                    <a href="">
+                                    <a href="/singleProduct.jsp?productId=2">
                                         Coca Cola Pet 1.5L
                                     </a>
                                 </h1>
@@ -93,7 +93,7 @@
                                     <h2 class="price">Rs. 304.00</h2>
                                     <h2 class="discPrice">Rs. 380.00</h2>
                                 </span>
-                                <button class="addToCartBtn flex flexRow">
+                                <button class="addToCartBtn flex flexRow" onclick="addToCart(2)">
                                     <i class="fa-solid fa-cart-plus"></i>
                                     Add to Cart
                                 </button>
@@ -114,7 +114,7 @@
                             </div>
                             <div class="productContent flex flexCol">
                                 <h1>
-                                    <a href="">
+                                    <a href="/singleProduct.jsp?productId=42">
                                         Sante Granola Chocolate
                                     </a>
                                 </h1>
@@ -122,7 +122,7 @@
                                     <h2 class="price">Rs. 1850.00</h2>
                                     <h2 class="discPrice">Rs. 1480.00</h2>
                                 </span>
-                                <button class="addToCartBtn flex flexRow">
+                                <button class="addToCartBtn flex flexRow" onclick="addToCart(42)">
                                     <i class="fa-solid fa-cart-plus"></i>
                                     Add to Cart
                                 </button>
@@ -143,7 +143,7 @@
                             </div>
                             <div class="productContent flex flexCol">
                                 <h1>
-                                    <a href="">
+                                    <a href="/singleProduct.jsp?productId=37">
                                         Grapes - Black
                                     </a>
                                 </h1>
@@ -151,7 +151,7 @@
                                     <h2 class="price">Rs. 2450.00</h2>
                                     <h2 class="discPrice">Rs. 1960.00</h2>
                                 </span>
-                                <button class="addToCartBtn flex flexRow">
+                                <button class="addToCartBtn flex flexRow" onclick="addToCart(37)">
                                     <i class="fa-solid fa-cart-plus"></i>
                                     Add to Cart
                                 </button>
@@ -172,7 +172,7 @@
                             </div>
                             <div class="productContent flex flexCol">
                                 <h1>
-                                    <a href="">
+                                    <a href="/singleProduct.jsp?productId=58">
                                         Promate Book 100 Pgs
                                     </a>
                                 </h1>
@@ -180,7 +180,7 @@
                                     <h2 class="price">Rs. 400.00</h2>
                                     <h2 class="discPrice">Rs. 320.00</h2>
                                 </span>
-                                <button class="addToCartBtn flex flexRow">
+                                <button class="addToCartBtn flex flexRow" onclick="addToCart(58)">
                                     <i class="fa-solid fa-cart-plus"></i>
                                     Add to Cart
                                 </button>
@@ -253,6 +253,30 @@
                 
             </div>
         </div>
+        <script>
+            function addToCart(productId) {
+                // Get existing cart items or initialize an empty array
+                let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+                // Check if the product ID is already in the cart
+                const existingItem = cartItems.find(item => item.productId === productId);
+
+                if (existingItem) {
+                    // Increment the quantity if the product is already in the cart
+                    existingItem.quantity++;
+                } else {
+                    // Add the new product to the cart with quantity 1
+                    cartItems.push({ productId, quantity: 1 });
+                }
+
+                // Update the cart in localStorage
+                localStorage.setItem("cart", JSON.stringify(cartItems));
+
+                // Provide feedback to the user (optional)
+                alert("Product added to cart!");
+                location.reload();
+            }
+        </script>
         <!--======================================================== PAGE-CONTENT END -->
         
         
