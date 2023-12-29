@@ -184,7 +184,7 @@
                             document.getElementById('BreadcrumbName').innerText = name;
                             document.getElementById('productName').innerText = name;
                             // document.getElementById('productDescription').innerText = demoPara;
-                            document.getElementById('discPrice').innerText = `Rs `+discPrice+`.00`;
+                            document.getElementById('discPrice').innerText = `Rs `+discPrice;
                             document.getElementById('orgPrice').innerText = `Rs `+orgPrice+`.00`;
                         } else {
                             console.error('Product not found.');

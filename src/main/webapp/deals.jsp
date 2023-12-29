@@ -52,156 +52,105 @@
         <div class="containerBlock flex">
             <div class="container">
                 
-                <div class="cardsContainer flex flexRow">
-                    <div class="productCard flex flexCol">
-                        <div class="productImg flex">
-                            <div class="productIcons flex flexRow">
-                                <span class="discIndicator">
-                                    -20%
-                                </span>
-                                <span class="wishlistIndicator">
-                                    <i class="fa-solid fa-heart"></i>
-                                </span>
-                            </div>
-                            <img src="https://i.postimg.cc/brf9L1tT/placeholder.png">
-                        </div>
-                        <div class="productContent flex flexCol">
-                            <h1>
-                                <a href="">
-                                    Product Title
-                                </a>
-                            </h1>
-                            <span class="productPrice flex flexRow">
-                                <h2 class="price">Rs. 152.00</h2>
-                                <h2 class="discPrice">Rs. 190.00</h2>
-                            </span>
-                            <button class="addToCartBtn flex flexRow">
-                                <i class="fa-solid fa-cart-plus"></i>
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="productCard flex flexCol">
-                        <div class="productImg flex">
-                            <div class="productIcons flex flexRow">
-                                <span class="discIndicator">
-                                    -20%
-                                </span>
-                                <span class="wishlistIndicator">
-                                    <i class="fa-regular fa-heart"></i>
-                                </span>
-                            </div>
-                            <img src="https://i.postimg.cc/brf9L1tT/placeholder.png">
-                        </div>
-                        <div class="productContent flex flexCol">
-                            <h1>
-                                <a href="">
-                                    Product Title
-                                </a>
-                            </h1>
-                            <span class="productPrice flex flexRow">
-                                <h2 class="price">Rs. 152.00</h2>
-                                <h2 class="discPrice">Rs. 190.00</h2>
-                            </span>
-                            <button class="addToCartBtn flex flexRow">
-                                <i class="fa-solid fa-cart-plus"></i>
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="productCard flex flexCol">
-                        <div class="productImg flex">
-                            <div class="productIcons flex flexRow">
-                                <span class="discIndicator">
-                                    -20%
-                                </span>
-                                <span class="wishlistIndicator">
-                                    <i class="fa-regular fa-heart"></i>
-                                </span>
-                            </div>
-                            <img src="https://i.postimg.cc/brf9L1tT/placeholder.png">
-                        </div>
-                        <div class="productContent flex flexCol">
-                            <h1>
-                                <a href="">
-                                    Product Title
-                                </a>
-                            </h1>
-                            <span class="productPrice flex flexRow">
-                                <h2 class="price">Rs. 152.00</h2>
-                                <h2 class="discPrice">Rs. 190.00</h2>
-                            </span>
-                            <button class="addToCartBtn flex flexRow">
-                                <i class="fa-solid fa-cart-plus"></i>
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="productCard flex flexCol">
-                        <div class="productImg flex">
-                            <div class="productIcons flex flexRow">
-                                <span class="discIndicator">
-                                    -20%
-                                </span>
-                                <span class="wishlistIndicator">
-                                    <i class="fa-regular fa-heart"></i>
-                                </span>
-                            </div>
-                            <img src="https://i.postimg.cc/brf9L1tT/placeholder.png">
-                        </div>
-                        <div class="productContent flex flexCol">
-                            <h1>
-                                <a href="">
-                                    Product Title
-                                </a>
-                            </h1>
-                            <span class="productPrice flex flexRow">
-                                <h2 class="price">Rs. 152.00</h2>
-                                <h2 class="discPrice">Rs. 190.00</h2>
-                            </span>
-                            <button class="addToCartBtn flex flexRow">
-                                <i class="fa-solid fa-cart-plus"></i>
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="productCard flex flexCol">
-                        <div class="productImg flex">
-                            <div class="productIcons flex flexRow">
-                                <span class="discIndicator">
-                                    -20%
-                                </span>
-                                <span class="wishlistIndicator">
-                                    <i class="fa-regular fa-heart"></i>
-                                </span>
-                            </div>
-                            <img src="https://i.postimg.cc/brf9L1tT/placeholder.png">
-                        </div>
-                        <div class="productContent flex flexCol">
-                            <h1>
-                                <a href="">
-                                    Product Title
-                                </a>
-                            </h1>
-                            <span class="productPrice flex flexRow">
-                                <h2 class="price">Rs. 152.00</h2>
-                                <h2 class="discPrice">Rs. 190.00</h2>
-                            </span>
-                            <button class="addToCartBtn flex flexRow">
-                                <i class="fa-solid fa-cart-plus"></i>
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
+                <div id="cardsContainer" class="cardsContainer flex flexRow">
+
                 </div>
                 
                 
             </div>
         </div>
+
+        <script>
+            // Fetch data from the servlet
+            fetch('/getProductDetails')
+                .then(response => response.json())
+                .then(data => {
+                    // Loop through the filtered fruits data
+                    data.forEach(product => {
+                        const id = product.id;
+                        const name = product.name;
+                        const orgPrice = product.orgPrice;
+                        const discPrice = product.discPrice;
+                        const image = product.image;
+
+                        // Get the container where want to append the product cards
+                        const cardsContainer = document.getElementById('cardsContainer');
+
+                        // Create a card element
+                        const card = document.createElement('div');
+                        card.className = 'product-card';
+
+
+                        const productCard =
+
+                            `<div class="productCard flex flexCol" style="width: 275px; height: 425px;">
+                                <div class="productImg flex">
+                                    <div class="productIcons flex flexRow">
+                                        <span class="discIndicator">
+                                            -20%
+                                        </span>
+                                        <span class="wishlistIndicator">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
+                                    </div>
+                                    <img src="`+image+`" style="width: 275px; height: 275px;">
+                                </div>
+                                <div class="productContent flex flexCol">
+                                    <h1>
+                                        <a href="/singleProduct.jsp?productId=`+id+`">
+                                            ` +name+ `
+                                        </a>
+                                    </h1>
+                                    <span class="productPrice flex flexRow">
+                                        <h2 class="price">Rs. ` +discPrice+ `.00</h2>
+                                        <h2 class="discPrice">Rs. ` +orgPrice+ `.00</h2>
+                                    </span>
+                                    <button class="addToCartBtn flex flexRow" onclick="addToCart(`+id+`)">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                            Add to Cart
+                                    </button>
+                                </div>
+                            </div> `;
+
+
+                        // Populate the card with product data
+                        card.innerHTML = productCard;
+
+                        // Append the card to the container
+                        cardsContainer.appendChild(card);
+
+                    });
+
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+
+
+            // adding products to the cart
+            function addToCart(productId) {
+                // Get existing cart items or initialize an empty array
+                let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+                // Check if the product ID is already in the cart
+                const existingItem = cartItems.find(item => item.productId === productId);
+
+                if (existingItem) {
+                    // Increment the quantity if the product is already in the cart
+                    existingItem.quantity++;
+                } else {
+                    // Add the new product to the cart with quantity 1
+                    cartItems.push({ productId, quantity: 1 });
+                }
+
+                // Update the cart in localStorage
+                localStorage.setItem("cart", JSON.stringify(cartItems));
+
+                // Provide feedback to the user (optional)
+                alert("Product added to cart!");
+                location.reload();
+            }
+        </script>
         <!--======================================================== PAGE-CONTENT END -->
         
         

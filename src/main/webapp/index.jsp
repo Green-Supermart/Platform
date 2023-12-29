@@ -81,17 +81,17 @@
                                         <i class="fa-solid fa-heart"></i>
                                     </span>
                                 </div>
-                                <img src="https://i.postimg.cc/brf9L1tT/placeholder.png">
+                                <img src="https://i.postimg.cc/yNz3CCB9/Coca-cola.jpg">
                             </div>
                             <div class="productContent flex flexCol">
                                 <h1>
                                     <a href="">
-                                        Product Title
+                                        Coca Cola Pet 1.5L
                                     </a>
                                 </h1>
                                 <span class="productPrice flex flexRow">
-                                    <h2 class="price">Rs. 152.00</h2>
-                                    <h2 class="discPrice">Rs. 190.00</h2>
+                                    <h2 class="price">Rs. 304.00</h2>
+                                    <h2 class="discPrice">Rs. 380.00</h2>
                                 </span>
                                 <button class="addToCartBtn flex flexRow">
                                     <i class="fa-solid fa-cart-plus"></i>
@@ -110,17 +110,17 @@
                                         <i class="fa-regular fa-heart"></i>
                                     </span>
                                 </div>
-                                <img src="https://i.postimg.cc/brf9L1tT/placeholder.png">
+                                <img src="https://i.postimg.cc/Gmwkqbsm/Sante-Granola-Chocolate.jpg">
                             </div>
                             <div class="productContent flex flexCol">
                                 <h1>
                                     <a href="">
-                                        Product Title
+                                        Sante Granola Chocolate
                                     </a>
                                 </h1>
                                 <span class="productPrice flex flexRow">
-                                    <h2 class="price">Rs. 152.00</h2>
-                                    <h2 class="discPrice">Rs. 190.00</h2>
+                                    <h2 class="price">Rs. 1850.00</h2>
+                                    <h2 class="discPrice">Rs. 1480.00</h2>
                                 </span>
                                 <button class="addToCartBtn flex flexRow">
                                     <i class="fa-solid fa-cart-plus"></i>
@@ -139,17 +139,17 @@
                                         <i class="fa-regular fa-heart"></i>
                                     </span>
                                 </div>
-                                <img src="https://i.postimg.cc/brf9L1tT/placeholder.png">
+                                <img src="https://i.postimg.cc/0jnYmcTp/Grapes-Black.png">
                             </div>
                             <div class="productContent flex flexCol">
                                 <h1>
                                     <a href="">
-                                        Product Title
+                                        Grapes - Black
                                     </a>
                                 </h1>
                                 <span class="productPrice flex flexRow">
-                                    <h2 class="price">Rs. 152.00</h2>
-                                    <h2 class="discPrice">Rs. 190.00</h2>
+                                    <h2 class="price">Rs. 2450.00</h2>
+                                    <h2 class="discPrice">Rs. 1960.00</h2>
                                 </span>
                                 <button class="addToCartBtn flex flexRow">
                                     <i class="fa-solid fa-cart-plus"></i>
@@ -168,17 +168,17 @@
                                         <i class="fa-regular fa-heart"></i>
                                     </span>
                                 </div>
-                                <img src="https://i.postimg.cc/brf9L1tT/placeholder.png">
+                                <img src="https://i.postimg.cc/Wbmpw71W/Promate-Book-100-Pgs.jpg">
                             </div>
                             <div class="productContent flex flexCol">
                                 <h1>
                                     <a href="">
-                                        Product Title
+                                        Promate Book 100 Pgs
                                     </a>
                                 </h1>
                                 <span class="productPrice flex flexRow">
-                                    <h2 class="price">Rs. 152.00</h2>
-                                    <h2 class="discPrice">Rs. 190.00</h2>
+                                    <h2 class="price">Rs. 400.00</h2>
+                                    <h2 class="discPrice">Rs. 320.00</h2>
                                 </span>
                                 <button class="addToCartBtn flex flexRow">
                                     <i class="fa-solid fa-cart-plus"></i>
