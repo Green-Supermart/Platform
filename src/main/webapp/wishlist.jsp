@@ -52,127 +52,136 @@
         <div class="containerBlock flex">
             <div class="container">
                 
-                <div class="cardsContainer flex flexRow">
-                    <div class="productCard flex flexCol">
-                        <div class="productImg flex">
-                            <div class="productIcons flex flexRow">
-                                <span class="discIndicator">
-                                    -20%
-                                </span>
-                                <span class="wishlistIndicator">
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </span>
-                            </div>
-                            <img src="https://i.postimg.cc/brf9L1tT/placeholder.png">
-                        </div>
-                        <div class="productContent flex flexCol">
-                            <h1>
-                                <a href="">
-                                    Product Title
-                                </a>
-                            </h1>
-                            <span class="productPrice flex flexRow">
-                                <h2 class="price">Rs. 152.00</h2>
-                                <h2 class="discPrice">Rs. 190.00</h2>
-                            </span>
-                            <button class="addToCartBtn flex flexRow">
-                                <i class="fa-solid fa-cart-plus"></i>
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="productCard flex flexCol">
-                        <div class="productImg flex">
-                            <div class="productIcons flex flexRow">
-                                <span class="discIndicator">
-                                    -20%
-                                </span>
-                                <span class="wishlistIndicator">
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </span>
-                            </div>
-                            <img src="https://i.postimg.cc/brf9L1tT/placeholder.png">
-                        </div>
-                        <div class="productContent flex flexCol">
-                            <h1>
-                                <a href="">
-                                    Product Title
-                                </a>
-                            </h1>
-                            <span class="productPrice flex flexRow">
-                                <h2 class="price">Rs. 152.00</h2>
-                                <h2 class="discPrice">Rs. 190.00</h2>
-                            </span>
-                            <button class="addToCartBtn flex flexRow">
-                                <i class="fa-solid fa-cart-plus"></i>
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="productCard flex flexCol">
-                        <div class="productImg flex">
-                            <div class="productIcons flex flexRow">
-                                <span class="discIndicator">
-                                    -20%
-                                </span>
-                                <span class="wishlistIndicator">
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </span>
-                            </div>
-                            <img src="https://i.postimg.cc/brf9L1tT/placeholder.png">
-                        </div>
-                        <div class="productContent flex flexCol">
-                            <h1>
-                                <a href="">
-                                    Product Title
-                                </a>
-                            </h1>
-                            <span class="productPrice flex flexRow">
-                                <h2 class="price">Rs. 152.00</h2>
-                                <h2 class="discPrice">Rs. 190.00</h2>
-                            </span>
-                            <button class="addToCartBtn flex flexRow">
-                                <i class="fa-solid fa-cart-plus"></i>
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="productCard flex flexCol">
-                        <div class="productImg flex">
-                            <div class="productIcons flex flexRow">
-                                <span class="discIndicator">
-                                    -20%
-                                </span>
-                                <span class="wishlistIndicator">
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </span>
-                            </div>
-                            <img src="https://i.postimg.cc/brf9L1tT/placeholder.png">
-                        </div>
-                        <div class="productContent flex flexCol">
-                            <h1>
-                                <a href="">
-                                    Product Title
-                                </a>
-                            </h1>
-                            <span class="productPrice flex flexRow">
-                                <h2 class="price">Rs. 152.00</h2>
-                                <h2 class="discPrice">Rs. 190.00</h2>
-                            </span>
-                            <button class="addToCartBtn flex flexRow">
-                                <i class="fa-solid fa-cart-plus"></i>
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
+                <div id="wishlistContainer" class="cardsContainer flex flexRow">
+
                 </div>
                 
                 
             </div>
         </div>
+
+        <script>
+            const wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+            const wishlistContainer = document.getElementById('wishlistContainer');
+
+            Promise.all(wishlistItems.map(item => {
+                let arrayIndex = item.productId - 1;
+
+                return fetch(`/getProductDetails?id=`+item.productId)
+                    .then(response => response.json())
+                    .then(productDetails => {
+                        const singleProduct = productDetails[arrayIndex];
+
+                        if (singleProduct) {
+                            const id = singleProduct.id;
+                            const discPrice = singleProduct.discPrice;
+                            const orgPrice = singleProduct.orgPrice;
+                            const image = singleProduct.image;
+                            const name = singleProduct.name;
+
+                            const wishlistItemElement = document.createElement('div');
+                            wishlistItemElement.className = 'wishlist-item';
+
+                            const wishlistItemHTML =
+                                `<div class="productCard flex flexCol" style="width: 275px; height: 425px;">
+                                <div class="productImg flex">
+                                    <div class="productIcons flex flexRow">
+                                        <span class="discIndicator">
+                                            -20%
+                                        </span>
+                                        <span class="wishlistIndicator">
+                                            <i class="fa-regular fa-trash-can" onclick="removeFromWishlist(`+id+`)"></i>
+                                        </span>
+                                    </div>
+                                    <img src="`+image+`" style="width: 275px; height: 275px;">
+                                </div>
+                                <div class="productContent flex flexCol">
+                                    <h1>
+                                        <a href="/singleProduct.jsp?productId=`+id+`">
+                                            ` +name+ `
+                                        </a>
+                                    </h1>
+                                    <span class="productPrice flex flexRow">
+                                        <h2 class="price">Rs. ` +discPrice+ `.00</h2>
+                                        <h2 class="discPrice">Rs. ` +orgPrice+ `.00</h2>
+                                    </span>
+                                    <button class="addToCartBtn flex flexRow" onclick="addToCart(`+id+`)">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                            Add to Cart
+                                    </button>
+                                </div>
+                            </div> `;
+
+                            wishlistItemElement.innerHTML = wishlistItemHTML;
+                            wishlistContainer.appendChild(wishlistItemElement);
+                        } else {
+                            console.error(`Product with ID `+item.productId+` not found`);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching product details:', error);
+                    });
+            }))
+                .then(() => {
+
+                })
+                .catch(error => {
+                    console.error('Error fetching product details:', error);
+                });
+
+
+
+            function addToCart(productId) {
+                // Get existing cart items or initialize an empty array
+                let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+                // Check if the product ID is already in the cart
+                const existingItem = cartItems.find(item => item.productId === productId);
+
+                if (existingItem) {
+                    // Increment the quantity if the product is already in the cart
+                    existingItem.quantity++;
+                } else {
+                    // Add the new product to the cart with quantity 1
+                    cartItems.push({ productId, quantity: 1 });
+                }
+
+                // Update the cart in localStorage
+                localStorage.setItem("cart", JSON.stringify(cartItems));
+
+                // Provide feedback to the user (optional)
+                alert("Product added to cart!");
+                removeFromWishlist(productId);
+                location.reload();
+            }
+
+
+            function removeFromWishlist(productId) {
+                // Get existing wishlist items or initialize an empty array
+                let wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+                // Find the index of the product with the given ID in the wishlist
+                const productIndex = wishlistItems.findIndex(item => item.productId === productId);
+
+                if (productIndex !== -1) {
+                    // Remove the product from the wishlist array
+                    wishlistItems.splice(productIndex, 1);
+
+                    // Update the wishlist in localStorage
+                    localStorage.setItem("wishlist", JSON.stringify(wishlistItems));
+
+                    // Provide feedback to the user (optional)
+                    //alert("Product removed from wishlist!");
+                    location.reload();
+
+                } else {
+                    // Product not found in the cart
+                    // You can handle this case as needed
+                    alert("Product not found in wishlist!");
+                }
+            }
+        </script>
         <!--======================================================== PAGE-CONTENT END -->
         
         
