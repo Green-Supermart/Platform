@@ -131,6 +131,17 @@
                 });
 
 
+            //display cart empty message
+            const wishlistBody = document.getElementById("wishlistContainer")
+
+            // check if there is any cartItem in cartList, if not, show "Your cart is empty" message
+            setInterval(function() {
+                if (wishlistBody.children.length === 0) {
+                    wishlistBody.innerHTML = `<div style="background: #ffffff; position: relative; display: flex; width: 1300px; border-radius: 10px; height: 200px"> <p id="cartEmptyMsg" style="display: flex; width: 100%; color: #808080; background: #ffffff; justify-content: center; align-items: center; font-size: 18px; font-weight: 300; position: absolute; top: 90px;">Your wishlist is empty</p> </div>`;
+                }
+            }, 1000);
+
+
 
             function addToCart(productId) {
                 // Get existing cart items or initialize an empty array
