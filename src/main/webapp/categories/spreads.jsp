@@ -129,48 +129,31 @@
                 });
 
 
-            // adding products to the cart
             function addToCart(productId) {
-                // Get existing cart items or initialize an empty array
                 let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-
-                // Check if the product ID is already in the cart
                 const existingItem = cartItems.find(item => item.productId === productId);
 
                 if (existingItem) {
-                    // Increment the quantity if the product is already in the cart
                     existingItem.quantity++;
                 } else {
-                    // Add the new product to the cart with quantity 1
                     cartItems.push({ productId, quantity: 1 });
                 }
 
-                // Update the cart in localStorage
                 localStorage.setItem("cart", JSON.stringify(cartItems));
-
-                // Provide feedback to the user (optional)
                 alert("Product added to cart!");
                 location.reload();
             }
 
             function addToWishlist(productId) {
-                // Get existing wishlist items or initialize an empty array
                 let wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || [];
-
-                // Check if the product ID is already in the wishlist
                 const existingItem = wishlistItems.find(item => item.productId === productId);
 
                 if (existingItem) {
                     alert("Product already in the wishlist!");
                 } else {
-                    // Add the new product to the wishlist
                     wishlistItems.push({ productId });
                 }
-
-                // Update the cart in localStorage
                 localStorage.setItem("wishlist", JSON.stringify(wishlistItems));
-
-                // Provide feedback to the user (optional)
                 alert("Product added to wishlist!");
             }
         </script>

@@ -79,7 +79,6 @@
                         const card = document.createElement('div');
                         card.className = 'product-card';
 
-
                         const productCard =
 
                             `<div class="productCard flex flexCol" style="width: 275px; height: 425px;">
@@ -111,11 +110,8 @@
                                 </div>
                             </div> `;
 
-
                         card.innerHTML = productCard;
-
                         cardsContainer.appendChild(card);
-
                     });
 
                 })
