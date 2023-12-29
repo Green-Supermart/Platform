@@ -49,7 +49,7 @@
 
                     </div>
                     <!-- Add the PayPal Smart Payment Button script -->
-                    <script src="https://www.paypal.com/sdk/js?client-id=" data-sdk-integration-source="button-factory"></script>
+                    <script src="https://www.paypal.com/sdk/js?client-id=AUBA90Ki_2CQEmoVYlja4DrZdw4O5MN3AHikBYfkUv7PF6AZuwfrSWVjAwF8jo7kYr6eNcdOzHQ8crAJ&currency=USD" data-sdk-integration-source="button-factory"></script>
 
 
                 </div>

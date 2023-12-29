@@ -19,7 +19,7 @@ public class sendEmail {
 
         Session session = Session.getInstance(properties, new Authenticator() {
             protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
-                return new javax.mail.PasswordAuthentication("greensupermartlk@gmail.com", "");
+                return new javax.mail.PasswordAuthentication("greensupermartlk@gmail.com", "dcxjhsdondtodigl");
             }
         });
 

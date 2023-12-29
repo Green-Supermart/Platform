@@ -54,7 +54,7 @@ function navbarHTML() {
     html += '</form>';
     
     html += '<div class="actionIcons flex flexRow">';
-    html += '<a href="wishlist.jsp" title="Wishlist">';
+    html += '<a href="http://localhost:8090/wishlist.jsp" title="Wishlist">';
     html += '<i class="fa-solid fa-heart"></i>';
     html += '</a>';
     html += '<div id="cartIcon" title="Show Cart (Alt + C)">';
